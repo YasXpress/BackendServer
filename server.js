@@ -7,7 +7,13 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+// Allow requests from your frontend
+app.use(cors({
+  origin: 'https://frontend-client.vercel.app', // <-- your Vercel frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, // if you need cookies/auth
+}));
+
 app.use(express.json());
 
 
