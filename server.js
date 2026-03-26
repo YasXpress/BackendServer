@@ -8,10 +8,6 @@ dotenv.config();
 const app = express();
 
 // Allow requests from your frontend
-const cors = require('cors');
-
-const cors = require('cors');
-
 const allowedOrigins = [
   'https://frontend-client.vercel.app',
   'https://frontend-client-8ma5-9nfudbe9s-yasxpress-projects.vercel.app'
