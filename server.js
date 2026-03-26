@@ -10,8 +10,21 @@ const app = express();
 // Allow requests from your frontend
 const cors = require('cors');
 
+const cors = require('cors');
+
+const allowedOrigins = [
+  'https://frontend-client.vercel.app',
+  'https://frontend-client-8ma5-9nfudbe9s-yasxpress-projects.vercel.app'
+];
+
 app.use(cors({
-  origin: '*'
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
 
 app.use(express.json());
