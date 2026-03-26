@@ -11,9 +11,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'https://frontend-client-8ma5.vercel.app', // match exactly
-  methods: ['GET','POST','PUT','DELETE'],
-  credentials: true
+  origin: '*'
 }));
 
 app.use(express.json());
